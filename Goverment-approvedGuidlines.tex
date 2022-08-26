@@ -1,0 +1,114 @@
+\documentclass[a4j,14pt]{jsarticle}
+%jbbok:書籍・jsarticle:論文，短い文書・jreport:レポート・letter:手紙・twocolumn:2段組
+\usepackage{amsmath,amsfonts,amssymb,mathtools,ascmac,bm,float,comment,url,fancybox,calc,subcaption,multicol,physics,tablefootnote,caption,graphics,multirow,plext,multirow,array}
+\usepackage{wrapfig}
+\usepackage[T1]{fontenc}
+\usepackage[top=15truemm,bottom=20truemm,left=15truemm,right=15truemm]{geometry}
+\usepackage[dvipdfmx]{graphicx,color,hyperref}
+\usepackage{tikz,listings,jlisting}
+\usepackage{pxjahyper}
+\usepackage{xcolor}
+\usepackage{framed}
+\hypersetup{
+    colorlinks=true,
+    citecolor=black,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+    \usetikzlibrary{arrows}
+    \usetikzlibrary{intersections,calc,arrows.meta,backgrounds,shapes.geometric,shapes.misc,positioning,fit,graphs}
+
+    \setlength{\columnsep}{5mm}
+    \columnseprule=0.1mm
+\newcounter{countitem}
+\setcounter{countitem}{0}
+\newcommand{\countitem}[1][]{\refstepcounter{countitem}\Roman{countitem}}
+\begin{document}
+\begin{center}
+    {\LARGE 学習指導案}
+\end{center}
+\begin{flushright}
+    学校名：XX高等学校\\
+    指導教員：溝口洸熙
+\end{flushright}
+\begin{description}
+    \item[日時] \today 1限目 （8:50 - 9:50）
+    \item[学級] 3年A組 （男子18名 女子22名）
+    \item[生徒の実態] \ \\
+        現在の状況をつらつらと．とりあえず，まぁ，なんとか，授業やってますてきな．
+    \item[単元] \(n\)時間\\
+        \begin{minipage}[t]{0.45\linewidth}
+            \centering
+            \begin{enumerate}
+                \item オリエンテーション
+                \item 集合理論とか写像とか
+                \item 数理論理
+                \item モデル
+                \item うんち
+            \end{enumerate}
+        \end{minipage}
+        \begin{minipage}[t]{0.45\linewidth}
+            \centering
+            \begin{enumerate}
+                \setcounter{enumi}{5}
+                \item 形式体系におけるしょーめー
+                \item トートロジーと証明可能性
+                \item グラフ理論
+                \item 最大流問題とか
+                \item 色々
+            \end{enumerate}
+        \end{minipage}
+        \vspace{1em}
+        \item[本時の目標]\
+        \begin{enumerate}
+            \item 色々できる
+            \item 証明できる
+            \item 足し算できる
+        \end{enumerate}
+        \item[評価基準]\
+        \begin{itemize}
+            \item 地震の
+                  \begin{itemize}
+                      \item 臨時情報
+                      \item 対応
+                            \begin{itemize}
+                                \item できるんか？
+                            \end{itemize}
+                  \end{itemize}
+            \item \(g(t)\)
+            \item \(h(t)\)
+        \end{itemize}
+\end{description}
+\newpage
+\fontsize{10pt}{0cm}\selectfont
+
+\noindent\textbf{指導手順}
+\begin{table}[h]
+    \fontsize{8pt}{0}\selectfont
+    \newcommand{\activee}{0.1\textwidth}
+    \newcommand{\valuee}{0.41\textwidth}
+    \newcommand{\pointt}{0.24\textwidth}
+    \newcommand{\evaluationn}{0.1\textwidth}
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        活動                       & {指導内容} & {指導場の留意点} & 評価の観点 \\
+        \hline
+        \begin{minipage}{\activee}
+            \centering
+            \pbox<t>{導入}
+        \end{minipage} &
+        \begin{minipage}{\valuee}
+            前回の復習
+        \end{minipage}  &
+        \begin{minipage}{\pointt}
+            この子はいいねぇ
+        \end{minipage}  &
+        \begin{minipage}{\evaluationn}
+            関心・意欲
+        \end{minipage}                                           \\
+        \hline
+    \end{tabular}
+\end{table}
+\end{document}
