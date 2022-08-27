@@ -1,0 +1,70 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{Goverment-approvedGuidlines}[2020/10/10]
+\usepackage{longtable,framed}
+
+\newcommand{\activee}{0.15\linewidth}
+\newcommand{\contentt}{0.5\linewidth}
+\newcommand{\pointt}{0.23\linewidth}
+
+\newcommand{\showTitle}[2]{%
+\begin{center}
+    {\LARGE 学習指導案}
+\end{center}
+\begin{flushright}
+    \begin{tabular}{rl}
+        指導教員 & #1 \\
+        指導科目 & #2 
+    \end{tabular}
+\end{flushright}
+}
+
+\newenvironment{TeachingProcedures}%
+    {\noindent\textbf{指導手順}
+    \begin{center}
+        \fontsize{8pt}{12pt}\selectfont
+        \renewcommand{\arraystretch}{1.2}
+        \begin{longtable}[c]{|c|c|c|}
+            \hline
+            活動 & 指導内容 & 指導上の留意点及び評価\\
+            \hline
+            }%
+            {\end{longtable}
+        \end{center}
+        \normalsize
+        }
+\newenvironment{activitycol}%
+{
+    \begin{minipage}{\activee}
+        \vspace{0.5em}
+}%
+{
+    \vspace{0.5em}
+    \end{minipage}
+    }
+\newenvironment{contentcol}%
+{
+    \begin{minipage}{\contentt}
+        \vspace{0.5em}
+}%
+{
+        \vspace{0.5em}
+    \end{minipage}
+}
+\newenvironment{pointcol}%
+{
+    \begin{minipage}{\pointt}
+        \vspace{0.5em}
+}%
+{
+    \vspace{0.5em}
+    \end{minipage}
+}
+\newenvironment{showGoal}%
+{
+    \begin{leftbar}
+        \noindent\textbf{到達目標}\\
+}%
+{
+    \end{leftbar}
+}
+\endinput

@@ -3,10 +3,11 @@
 \usepackage{amsmath,amsfonts,amssymb,mathtools,ascmac,bm,fancybox,calc,multicol,physics,array}
 \usepackage[top=20truemm,bottom=20truemm,left=15truemm,right=15truemm]{geometry}
 \usepackage{graphicx,color}
+\usepackage{Goverment-approvedGuidlines}
 \usepackage{tikz,listing,wrapfig,float,xcolor}
 \usepackage{url,subcaption,multirow,framed}
 \usepackage[unicode,hidelinks,pdfusetitle]{hyperref}
-\usepackage{luatexja-fontspec,lltjext}
+\usepackage{luatexja-fontspec,lltjext,longtable}
 \hypersetup{
     colorlinks=true,
     citecolor=black,
@@ -39,152 +40,167 @@
 \makeatother
 
 \begin{document}
-\begin{center}
-    {\LARGE 学習指導案}
-\end{center}
-\begin{flushright}
-    学校名：XX高等学校\\
-    指導教員：溝口洸熙
-\end{flushright}
-\begin{description}
-    \item[日時] \today 1限目 （8:50 - 9:50）
-    \item[学級] 3年A組 （男子18名 女子22名）
-    \item[生徒の実態] \ \\
-        現在の状況をつらつらと．とりあえず，まぁ，なんとか，授業やってますてきな．
-    \item[単元] \(n\)時間\\
-        \begin{minipage}[t]{0.45\linewidth}
-            \centering
-            \begin{enumerate}
-                \item オリエンテーション
-                \item 集合理論写像とか
-                \item 数理論理
-                \item モデル
-                \item うんち
-            \end{enumerate}
-        \end{minipage}
-        \begin{minipage}[t]{0.45\linewidth}
-            \centering
-            \begin{enumerate}
-                \setcounter{enumi}{5}
-                \item 形式体系におけるしょーめー
-                \item トートロジーと証明可能性
-                \item グラフ理論
-                \item 最大流問題とか
-                \item 色々
-            \end{enumerate}
-        \end{minipage}
-        \vspace{1em}
-        \item[本時の目標]\
-        \begin{enumerate}
-            \item 色々できる
-            \item 証明できる
-            \item 足し算できる
-        \end{enumerate}
-        \item[評価基準]\
+\showTitle{溝口洸熙}{数学}
+\begin{showGoal}
+    いろいろわかるようになる．
+\end{showGoal}
+\begin{TeachingProcedures}
+    \begin{activitycol}
+        \textbf{導入}\\
+        前時の学習の確認
+    \end{activitycol}&
+    \begin{contentcol}
+        \textbf{前回の復習}\\
+        二次関数\(f(x)=2x^2-2\)のグラフを描き，頂点の座標と軸の方程式をを求めよ．
+    \end{contentcol}&
+    \begin{pointcol}
         \begin{itemize}
-            \item 地震の
-                  \begin{itemize}
-                      \item 臨時情報
-                      \item 対応
-                            \begin{itemize}
-                                \item できるんか？
-                            \end{itemize}
-                  \end{itemize}
-            \item \(g(t)\)
-            \item \(h(t)\)
+            \item 前時の評価に基づき，不十分な生徒に．．．．．
+            \item 前時の学習内容を確認しながら，答え合わせ．
         \end{itemize}
-\end{description}
-\newpage
-\fontsize{10pt}{0cm}\selectfont
-
-\noindent\textbf{指導手順}
-\begin{table}[h]
-    \fontsize{8pt}{0}\selectfont
-    \newcommand{\activee}{0.2\textwidth}
-    \newcommand{\valuee}{0.5\textwidth}
-    \newcommand{\pointt}{0.23\textwidth}
-    \centering
-    \renewcommand{\arraystretch}{1.2}
-    \begin{tabular}{|c|c|c|}
-        \hline
-        活動                                                                 & {指導内容} & {指導上の留意点及び評価} \\
-        \hline
-        \begin{minipage}{\activee}
-            \textbf{導入}\\
-            前時の学習の確認
-        \end{minipage}                                           &
-        \begin{minipage}{\valuee}
-            前回の復習\\
-            二次関数\(y=2x^2-2\)のグラフを描き，頂点の座標と軸の方程式を求めよ．
-        \end{minipage} &
-        \begin{minipage}{\pointt}
-            \vspace{0.5em}
-            \begin{itemize}
-                \item 前時の評価を基に，不十分な生徒に机間指導の際，個別指導を行う．
-                \item 前時の学習内容を確認しながら，答え合わせをする．
-            \end{itemize}
-            \vspace{0.5em}
-        \end{minipage}                                                                                     \\
-        \hline
-        \begin{minipage}{\activee}
-            \vspace{0.5em}
-            \textbf{展開}\\
-            グラフから関数の式\[y=a(x-p)^2\]を推測する．
-        \end{minipage}                         &
-        \begin{minipage}{\valuee}
-            \vspace{0.5em}
-            \begin{framed}
-                \textbf{課題1}\hspace{1em}
-                二次関数\(y=2x^2\)のグラフを\(x\)軸方向に1だけ平行移動したグラフを描く．
-            \end{framed}
-            \vspace{0.5em}
-            \begin{framed}
-                \textbf{課題2}\hspace{1em}
-                これまでに学習したことを用いて，平行移動した関数の式を調べ，それはどのような式になるかを考える．
-            \end{framed}
-        \end{minipage}                                           &
-        \begin{minipage}{\pointt}
-            \vspace{0.5em}
-            \begin{itemize}
-                \item グラフを書くことで，平行移動の概念を理解させる．
-                \item 3点\((0,0), (1,2), (2,8)\)がそれぞれどの点に移動するか考える．
-            \end{itemize}
-            \begin{framed}
-                \textbf{関心・意欲・態度}\\
-                \(x\)軸方向へ平行移動する二次関数のグラフについて関心を持ち，調べようとする．
-            \end{framed}
-        \end{minipage}                                                                                    \\
-                                                                             &
-        \begin{minipage}{\valuee}
-            \textbf{予想される生徒の回答}\\
-            \begin{itemize}
-                \item 点の平行移動を調べる
-                \item 頂点や軸の平行移動を調べる
-                \item 一次関数を調べる
-            \end{itemize}
-            \vspace{0.5em}
-        \end{minipage}                                      &
-        \begin{minipage}{\pointt}
-            いろいろ考えよう
-        \end{minipage}                                                                                     \\
-        \hline
-        \begin{minipage}{\activee}
-            \textbf{振り返り}\\
-            二次関数の式とグラフの平行移動について理解する．
-        \end{minipage}                     &
-        \begin{minipage}{\valuee}
-            \vspace{0.5em}
-            \begin{framed}
-                \textbf{発問}\hspace{1em}二次関数\(y=2(x-p)^2\)のグラフは
-                \(y=2x^2\)のグラフを\(x\)軸方向にどのように平行移動したグラフとなるか
-            \end{framed}
-            \vspace{0.5em}
-        \end{minipage}                                           &
-        \begin{minipage}{\pointt}
-            やる気ありますかい？
-        \end{minipage}                                                                                     \\
-        \hline
-    \end{tabular}
-\end{table}
-
+    \end{pointcol}\\
+    \begin{activitycol}
+        復習と，引っかかり
+    \end{activitycol}&
+    \begin{contentcol}
+        {\begin{equation}
+                \begin{aligned}
+                    f(x) & = g(x)\circ h(x) \\
+                    g(x) & = \sin x         \\
+                    h(x) & = \cos x
+                \end{aligned}
+            \end{equation}
+        }
+    \end{contentcol}&
+    \begin{pointcol}
+        \begin{framed}
+            課題1\\
+            \[f(x)=(x-p)^2\]
+        \end{framed}
+    \end{pointcol}\\
+    \hline
+    \begin{activitycol}
+        \textbf{展開}\\
+        いろいろ展開しまする．
+    \end{activitycol}&
+    \begin{contentcol}
+        \begin{equation}
+            \begin{aligned}
+                  & 4\pi k Q              \\
+                F & =ma                   \\
+                F & =G\dfrac{m_1m_2}{r^2}
+            \end{aligned}
+        \end{equation}
+    \end{contentcol}&
+    \begin{pointcol}
+        \begin{framed}
+            課題2\\
+            \begin{equation*}
+                f(x)=\left(\begin{aligned}
+                    0            & x=0     \\\\
+                    \dfrac{1}{x} & x\neq 0
+                \end{aligned}
+                \right.
+            \end{equation*}
+        \end{framed}
+    \end{pointcol}\\
+    \begin{activitycol}
+        \textbf{展開}\\
+        いろいろ展開しまする．
+    \end{activitycol}&
+    \begin{contentcol}
+        \begin{equation}
+            \begin{aligned}
+                  & 4\pi k Q              \\
+                F & =ma                   \\
+                F & =G\dfrac{m_1m_2}{r^2}
+            \end{aligned}
+        \end{equation}
+    \end{contentcol}&
+    \begin{pointcol}
+        \begin{framed}
+            課題2\\
+            \begin{equation*}
+                f(x)=\begin{cases}
+                    0            & x=0     \\\\
+                    \dfrac{1}{x} & x\neq 0
+                \end{cases}
+            \end{equation*}
+        \end{framed}
+    \end{pointcol}\\
+    \hline
+    \begin{activitycol}
+        \textbf{展開}\\
+        いろいろ展開しまする．
+    \end{activitycol}&
+    \begin{contentcol}
+        \begin{equation}
+            \begin{aligned}
+                  & 4\pi k Q              \\
+                F & =ma                   \\
+                F & =G\dfrac{m_1m_2}{r^2}
+            \end{aligned}
+        \end{equation}
+    \end{contentcol}&
+    \begin{pointcol}
+        \begin{framed}
+            課題2\\
+            \begin{equation*}
+                f(x)=\begin{cases}
+                    0            & x=0     \\\\
+                    \dfrac{1}{x} & x\neq 0
+                \end{cases}
+            \end{equation*}
+        \end{framed}
+    \end{pointcol}\\
+    \begin{activitycol}
+        \textbf{展開}\\
+        いろいろ展開しまする．
+    \end{activitycol}&
+    \begin{contentcol}
+        \begin{equation}
+            \begin{aligned}
+                  & 4\pi k Q              \\
+                F & =ma                   \\
+                F & =G\dfrac{m_1m_2}{r^2}
+            \end{aligned}
+        \end{equation}
+    \end{contentcol}&
+    \begin{pointcol}
+        \begin{framed}
+            課題2\\
+            \begin{equation*}
+                f(x)=\begin{cases}
+                    0            & x=0     \\\\
+                    \dfrac{1}{x} & x\neq 0
+                \end{cases}
+            \end{equation*}
+        \end{framed}
+    \end{pointcol}\\
+    \begin{activitycol}
+        \textbf{展開}\\
+        いろいろ展開しまする．
+    \end{activitycol}&
+    \begin{contentcol}
+        \begin{equation}
+            \begin{aligned}
+                  & 4\pi k Q              \\
+                F & =ma                   \\
+                F & =G\dfrac{m_1m_2}{r^2}
+            \end{aligned}
+        \end{equation}
+    \end{contentcol}&
+    \begin{pointcol}
+        \begin{framed}
+            課題2\\
+            \begin{equation*}
+                f(x)=\begin{cases}
+                    0            & x=0     \\\\
+                    \dfrac{1}{x} & x\neq 0
+                \end{cases}
+            \end{equation*}
+        \end{framed}
+    \end{pointcol}\\
+    \hline
+\end{TeachingProcedures}
 \end{document}
