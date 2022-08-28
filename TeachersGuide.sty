@@ -1,17 +1,22 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{Goverment-approvedGuidlines}[2020/10/10]
-\usepackage{longtable,framed}
+\ProvidesPackage{TeachersGuide}[2020/10/10]
+\usepackage{longtable}
 
-\newcommand{\activee}{0.15\linewidth}
-\newcommand{\contentt}{0.5\linewidth}
-\newcommand{\pointt}{0.23\linewidth}
+\newcommand{\tpfwidth}{0.15\linewidth}
+\newcommand{\tpswidth}{0.5\linewidth}
+\newcommand{\tptwidth}{0.23\linewidth}
+\newcommand{\GuidlineTitle}{学習指導案}
+\newcommand{\tpf}{活動}
+\newcommand{\tps}{指導内容}
+\newcommand{\tpt}{指導上の留意点及び評価}
 
 \newcommand{\showTitle}[2]{%
 \begin{center}
-    {\LARGE 学習指導案}
+    {\LARGE \GuidlineTitle}
 \end{center}
 \begin{flushright}
     \begin{tabular}{rl}
+        \multicolumn{2}{c}{\today\ 更新}\\
         指導教員 & #1 \\
         指導科目 & #2 
     \end{tabular}
@@ -19,40 +24,38 @@
 }
 
 \newenvironment{TeachingProcedures}%
-    {\noindent\textbf{指導手順}
-    \begin{center}
+    {
         \fontsize{8pt}{12pt}\selectfont
         \renewcommand{\arraystretch}{1.2}
         \begin{longtable}[c]{|c|c|c|}
             \hline
-            活動 & 指導内容 & 指導上の留意点及び評価\\
+            {\tpf} & {\tps} & {\tpt}\\
             \hline
             }%
             {\end{longtable}
-        \end{center}
         \normalsize
         }
-\newenvironment{activitycol}%
+\newenvironment{tpfcol}%
 {
-    \begin{minipage}{\activee}
+    \begin{minipage}{\tpfwidth}
         \vspace{0.5em}
 }%
 {
     \vspace{0.5em}
     \end{minipage}
     }
-\newenvironment{contentcol}%
+\newenvironment{tpscol}%
 {
-    \begin{minipage}{\contentt}
+    \begin{minipage}{\tpswidth}
         \vspace{0.5em}
 }%
 {
         \vspace{0.5em}
     \end{minipage}
 }
-\newenvironment{pointcol}%
+\newenvironment{tptcol}%
 {
-    \begin{minipage}{\pointt}
+    \begin{minipage}{\tptwidth}
         \vspace{0.5em}
 }%
 {
