@@ -6,44 +6,60 @@
 \newcommand{\tpswidth}{0.5\linewidth}
 \newcommand{\tptwidth}{0.23\linewidth}
 \newcommand{\GuidlineTitle}{学習指導案}
-\newcommand{\attainmentTargetTitle}{到達目標}
 \newcommand{\tpf}{活動}
 \newcommand{\tps}{指導内容}
 \newcommand{\tpt}{指導上の留意点及び評価}
+\newcounter{sectioncount}
+\setcounter{sectioncount}{0}
+\newcommand{\sectioncount}[1][]{\refstepcounter{sectioncount}\arabic{sectioncount}.}
 
-\newcommand{\showTitle}[2]{%
+\newcommand{\showTitle}[5]{%
 \begin{center}
     {\LARGE \GuidlineTitle}
 \end{center}
 \begin{flushright}
-    \begin{tabular}{rl}
-        \multicolumn{2}{c}{\today\ 更新}\\
-        指導教員 & #1 \\
-        指導科目 & #2 
+    \begin{flushleft}
+        \today 更新
+    \end{flushleft}
+    \begin{tabular}{ll}
+        日時 & #1\\
+        学級 & #2\\
+        使用教科書 & #3\\ 
+        指導科目 & #4\\
+        授業者 & #5 
     \end{tabular}
 \end{flushright}
 }
 
-\newcommand{\classInfo}[2]{%
-\begin{leftbar}
-    \begin{tabular}{rl}
-        \textbf{授業日付} & #1\\
-        \textbf{授業学級} & #2        
-    \end{tabular}
-\end{leftbar}
-}
-
-\newenvironment{attainmentTarget}%
+\newenvironment{attainmentTarget}% %%到達目標
 {\vspace{1em}
     \begin{leftbar}
-        \noindent\textbf{\attainmentTargetTitle}\par
+        \noindent\textbf{\sectioncount 到達目標}\par
 }%
 {
     \end{leftbar}
 }
 
-\newenvironment{TeachingProcedures}%
+\newenvironment{EvaluationCriterion}% %%評価基準
+{
+    \begin{leftbar}
+        \noindent{\textbf{\sectioncount 評価規準}}
+    \end{leftbar}
+    \begin{longtable}[c]{|p{0.33\linewidth}|p{0.33\linewidth}|p{0.33\linewidth}|}
+        \hline
+        \multicolumn{1}{|c|}{知識・技能} & \multicolumn{1}{c|}{思考・判断・表現} & \multicolumn{1}{c|}{主体的に学習に取り組む態度}\\
+        \hline
+}%
+{
+    \end{longtable}
+}
+
+
+\newenvironment{TeachingProcedures}% %%指導計画表
     {
+        \begin{leftbar}
+            \noindent{\textbf{\sectioncount 本時の展開}}
+        \end{leftbar}
         \fontsize{8pt}{12pt}\selectfont
         \renewcommand{\arraystretch}{1.2}
         \begin{longtable}[c]{|c|c|c|}
