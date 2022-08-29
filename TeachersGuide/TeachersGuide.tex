@@ -166,14 +166,21 @@
 \renewcommand{\tpt}{指導上の留意点及び評価}
 \begin{lstlisting}
 \documentclass{jlreq}
-%プリアンブルは省略
+\usepackage{TeachersGuide}
+%%%%%%%%%%%%%%%%%%%%
+%任意のパッケージ・設定
+%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+% タイトル出力
 \showTitle{溝口洸熙}{数学}
+% 表の出力
 \begin{TeachingProcedures}
+    % 1列目の内容
     \begin{tpfcol}
         \textbf{導入}\\
         しっかり復習
     \end{tpfcol} &
+    % 2列目の内容
     \begin{tpscol}
         展開の復習
         \begin{equation}
@@ -183,6 +190,7 @@
             \end{aligned}\label{eq:ex1}
         \end{equation}
     \end{tpscol} &
+    % 3列目の内容
     \begin{tptcol}
         展開の計算(\ref{eq:ex1})が理解できるか．
     \end{tptcol}
