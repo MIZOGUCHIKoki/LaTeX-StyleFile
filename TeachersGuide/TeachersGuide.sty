@@ -2,20 +2,26 @@
 \ProvidesPackage{TeachersGuide}[2020/10/10]
 \usepackage{longtable}
 
+\newcommand{\showSection}[1]{\noindent\textbf{\sectioncount #1}}
 \newcommand{\tpfwidth}{0.15\linewidth}
 \newcommand{\tpswidth}{0.5\linewidth}
 \newcommand{\tptwidth}{0.23\linewidth}
-\newcommand{\GuidlineTitle}{学習指導案}
+\newcommand{\guidlineTitle}{学習指導案}
+\newcommand{\enumiA}{\renewcommand{\labelenumi}{A.\arabic{enumi}}}
+\newcommand{\enumiB}{\renewcommand{\labelenumi}{B.\arabic{enumi}}}
+\newcommand{\enumiC}{\renewcommand{\labelenumi}{C.\arabic{enumi}}}
+
 \newcommand{\tpf}{活動}
 \newcommand{\tps}{指導内容}
 \newcommand{\tpt}{指導上の留意点及び評価}
+
 \newcounter{sectioncount}
 \setcounter{sectioncount}{0}
 \newcommand{\sectioncount}[1][]{\refstepcounter{sectioncount}\arabic{sectioncount}.}
 
-\newcommand{\showTitle}[5]{%
+\newcommand{\showTitle}[5]{% %%タイトル・指導情報
 \begin{center}
-    {\LARGE \GuidlineTitle}
+    {\LARGE \guidlineTitle}
 \end{center}
 \begin{flushright}
     \begin{flushleft}
@@ -31,23 +37,42 @@
 \end{flushright}
 }
 
-\newenvironment{attainmentTarget}% %%到達目標
-{\vspace{1em}
-    \begin{leftbar}
-        \noindent\textbf{\sectioncount 到達目標}\par
-}%
+\newcommand{\unitTitle}[1]% %%単元名
 {
+    \begin{leftbar}
+        \showSection{単元名}
+        \hspace{1em}#1
     \end{leftbar}
+}
+
+\newenvironment{UnitGoals}% %%単元の目標
+{
+    \begin{leftbar}
+        \showSection{単元の目標}
+    \end{leftbar}
+    \begin{quote}
+}{
+    \end{quote}
+}
+
+\newenvironment{UnitView}% %%単元観
+{
+    \begin{leftbar}
+        \showSection{単元観}
+    \end{leftbar}
+    \begin{quote}      
+}{            
+    \end{quote}
 }
 
 \newenvironment{EvaluationCriterion}% %%評価基準
 {
     \begin{leftbar}
-        \noindent{\textbf{\sectioncount 評価規準}}
+        \showSection{評価規準}
     \end{leftbar}
     \begin{longtable}[c]{|p{0.33\linewidth}|p{0.33\linewidth}|p{0.33\linewidth}|}
         \hline
-        \multicolumn{1}{|c|}{知識・技能} & \multicolumn{1}{c|}{思考・判断・表現} & \multicolumn{1}{c|}{主体的に学習に取り組む態度}\\
+        \multicolumn{1}{|c|}{知識・技能 [A]} & \multicolumn{1}{c|}{思考・判断・表現 [B]} & \multicolumn{1}{c|}{主体的に学習に取り組む態度 [C]}\\
         \hline
 }%
 {
@@ -55,10 +80,48 @@
 }
 
 
+\newenvironment{UnitPlan}% %%単元計画
+{
+    \begin{leftbar}
+        \showSection{単元の授業計画並びに評価計画}
+    \end{leftbar}
+    \newcounter{timeCount}
+    \setcounter{timeCount}{0}
+    \newcommand{\timeCount}[1][]{\refstepcounter{timeCount}第\arabic{timeCount}時間}
+    \begin{longtable}[c]{|c|p{0.4\linewidth}|c|p{0.3\linewidth}|}
+        \hline
+        時間 & \multicolumn{1}{|c|}{学習活動} & 評価規準 & \multicolumn{1}{|c|}{評価方法}\\
+        \hline
+
+}{
+    \end{longtable}
+}
+
+\newenvironment{StudentFacts}% %%生徒の実態
+{
+    \begin{leftbar}
+        \showSection{生徒の実態}
+    \end{leftbar}
+    \begin{quote}
+        
+}{
+    \end{quote}
+}
+
+\newenvironment{attainmentTarget}% %%到達目標
+{
+    \begin{leftbar}
+        \showSection{本時の到達目標}\par
+}%
+{
+    \end{leftbar}
+}
+
+
 \newenvironment{TeachingProcedures}% %%指導計画表
     {
         \begin{leftbar}
-            \noindent{\textbf{\sectioncount 本時の展開}}
+            \showSection{本時の展開}
         \end{leftbar}
         \fontsize{8pt}{12pt}\selectfont
         \renewcommand{\arraystretch}{1.2}

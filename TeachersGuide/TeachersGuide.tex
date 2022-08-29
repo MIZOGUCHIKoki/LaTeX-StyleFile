@@ -106,110 +106,113 @@
 \begin{leftbar}
     \section*{コマンド定義}
 \end{leftbar}
-\begin{table}[h]
-    \begin{tabular}{ll|ll}
-        \verb|\tptwidth|      & \verb|tpf|\ 列の幅設定      & \verb|tpt|                   & 指導案表の1列目のヘッダ文字列 \\
-        \verb|\tpswidth|      & \verb|tps|\ 列の幅設定      & \verb|tps|                   & 指導案表の2列目のヘッダ文字列 \\
-        \verb|\tptwidth|      & \verb|tpt|\ 列の幅設定      & \verb|tpt|                   & 指導案表の3列目のヘッダ文字列 \\
-        \verb|\GuidlineTitle| & \textbf{学習指導案}\ を出力 & \verb|attainmentTargetTitle| & \textbf{到達目標} を出力      \\
-    \end{tabular}
-\end{table}
-\noindent\ovalbox{\large \verb|\showTitle|}\par
-タイトル・指導日時・学級・指導教科書・指導科目・指導者を出力する．を印字する．\\
-\underline{\textbf{入力}}\\
-\verb|\showTitle{日時}{学級}{使用教科書}{指導科目}{指導教員}|\\
-\begin{leftbar}
-    \section*{環境定義}
-\end{leftbar}
-\noindent\ovalbox{\large\verb|attainmentTarget|}\par
-\textbf{到達目標}を記述する．\verb|leftbar|環境を用いて構築している．\\
-\noindent\ovalbox{\large\verb|TeachingProcedures|}\par
-指導案表の枠を設計する．この環境は\verb|longtable|環境を用いて構築している．従って\verb|tabular|環境同様，列の区切りは\verb| & |を用い，行の区切りは，\verb|\\ |で行う．\par
-ヘッダの部分\footnote{デフォルトでは，活動・指導内容・指導上の留意点及び評価}は，それぞれ括弧内のコマンド\footnote{tpf,tps,tpt}で定義しているので，変更したい場合は，適宜\verb| \renewcommand |\footnote{「活動」を「活動内容」に変更したい場合は，{\ttfamily\textbackslash renewcommand\{\textbackslash tpf\}\{活動内容\}}}で更新する．\vspace{0.5em}\\
-\ovalbox{\large\verb|tpfcol,tpscol,tptcol|}\par
-\verb|tpf, tps, tpt|の列に対して，\verb|tpfcol,tpscol,tptcol|の環境下で編集を行う．これらは，\verb|minipage|環境を用いて構築している．\par
-\renewcommand{\tpf}{活動（tpf）}
-\renewcommand{\tps}{指導内容（tps）}
-\renewcommand{\tpt}{指導上の留意点及び評価（tpt）}
-\begin{TeachingProcedures}
-    \begin{tpfcol}
-        \begin{verbatim}
-\begin{tpfcol}
-                    
-\end{tpfcol} &
-            \end{verbatim}
-    \end{tpfcol}&
-    \begin{tpscol}
-        \begin{verbatim}
-\begin{tpscol}
-        
-\end{tpscol} &
-        \end{verbatim}
-    \end{tpscol}&
-    \begin{tptcol}
-        \begin{verbatim}
-\begin{tptcol}
-    
-\end{tptcol} \\
-        \end{verbatim}
-    \end{tptcol}\\
-    \hline
-\end{TeachingProcedures}
-\newpage
-\begin{leftbar}
-    \section*{作成例}
-\end{leftbar}
 
-\renewcommand{\tpf}{活動}
-\renewcommand{\tps}{指導内容}
-\renewcommand{\tpt}{指導上の留意点及び評価}
-\begin{oframed}
-    \showTitle{\today 2時限目}{3年A組}{数学 I 数研出版}{数学}{溝口洸熙}
-    \begin{attainmentTarget}
-        \(x\)軸方向への平行移動するグラフの関数を推測し，二次関数\(y=a(x-p)^2\)のグラフを描く．
-    \end{attainmentTarget}
-    \begin{TeachingProcedures}
-        \begin{tpfcol}
-            \textbf{導入}\\
-            前回の事前の学習の確認
-        \end{tpfcol} &
-        \begin{tpscol}
-            \fbox{復習}\\
-            二次関数\(y=2x^2-2\)のグラフを描き
-            頂点の座標と軸の方程式を求めよ．
-        \end{tpscol} &
-        \begin{tptcol}
-            前時の評価を基に不十分な生徒に机間指導の際に個別に指導する．
-        \end{tptcol}\\
-        \hline
-        \begin{tpfcol}
-            \textbf{展開}\\
-            グラフから関数の 式 \(y=a(x-p)^2\) を推測 する．
-        \end{tpfcol} &
-        \begin{tpscol}
-            \begin{framed}
-                \textbf{課題1}\\
-                二次関数\(y=2x^2\)のグラフを\(x\)軸方向に1だけ平行移動したグラフを描く．
-            \end{framed}
-            \begin{tikzpicture}[scale=0.4]%倍率
-                \draw[very thick, -stealth] (-4,0)--(4,0) node[right] {$x$};%x軸
-                \draw[very thick, -stealth] (0,-1)--(0,5) node[above] {$y$};%y軸
-                \draw[domain=-2:2] plot(\x, {pow(\x,2)})node[above]{\(y=2x^2\)};
-                \draw[red,domain=-1:3,thick] plot(\x, {pow(\x,2)-2*\x+1})node[right]{\textcolor{red}{\(y=2(x-1)^2\)}};
-            \end{tikzpicture}
-        \end{tpscol} &
-        \begin{tptcol}
-            グラフをかくことで，\(x\)軸方向に1だけ平行移動するとはどういうことかを考えさせる．
-        \end{tptcol}\\
-    \end{TeachingProcedures}
-\end{oframed}
-\begin{EvaluationCriterion}
-    \begin{itemize}
-        \item a
-        \item a
-        \item
-    \end{itemize}
-    & a&a\\
-    \hline
-\end{EvaluationCriterion}
+
+% \begin{table}[h]
+%     \begin{tabular}{ll|ll}
+%         \verb|\tptwidth|      & \verb|tpf|\ 列の幅設定      & \verb|tpt|                   & 指導案表の1列目のヘッダ文字列 \\
+%         \verb|\tpswidth|      & \verb|tps|\ 列の幅設定      & \verb|tps|                   & 指導案表の2列目のヘッダ文字列 \\
+%         \verb|\tptwidth|      & \verb|tpt|\ 列の幅設定      & \verb|tpt|                   & 指導案表の3列目のヘッダ文字列 \\
+%         \verb|\GuidlineTitle| & \textbf{学習指導案}\ を出力 & \verb|attainmentTargetTitle| & \textbf{到達目標} を出力      \\
+%     \end{tabular}
+% \end{table}
+% \noindent\ovalbox{\large \verb|\showTitle|}\par
+% タイトル・指導日時・学級・指導教科書・指導科目・指導者を出力する．を印字する．\\
+% \underline{\textbf{入力}}\\
+% \verb|\showTitle{日時}{学級}{使用教科書}{指導科目}{指導教員}|\\
+% \begin{leftbar}
+%     \section*{環境定義}
+% \end{leftbar}
+% \noindent\ovalbox{\large\verb|attainmentTarget|}\par
+% \textbf{到達目標}を記述する．\verb|leftbar|環境を用いて構築している．\\
+% \noindent\ovalbox{\large\verb|TeachingProcedures|}\par
+% 指導案表の枠を設計する．この環境は\verb|longtable|環境を用いて構築している．従って\verb|tabular|環境同様，列の区切りは\verb| & |を用い，行の区切りは，\verb|\\ |で行う．\par
+% ヘッダの部分\footnote{デフォルトでは，活動・指導内容・指導上の留意点及び評価}は，それぞれ括弧内のコマンド\footnote{tpf,tps,tpt}で定義しているので，変更したい場合は，適宜\verb| \renewcommand |\footnote{「活動」を「活動内容」に変更したい場合は，{\ttfamily\textbackslash renewcommand\{\textbackslash tpf\}\{活動内容\}}}で更新する．\vspace{0.5em}\\
+% \ovalbox{\large\verb|tpfcol,tpscol,tptcol|}\par
+% \verb|tpf, tps, tpt|の列に対して，\verb|tpfcol,tpscol,tptcol|の環境下で編集を行う．これらは，\verb|minipage|環境を用いて構築している．\par
+% \renewcommand{\tpf}{活動（tpf）}
+% \renewcommand{\tps}{指導内容（tps）}
+% \renewcommand{\tpt}{指導上の留意点及び評価（tpt）}
+% \begin{TeachingProcedures}
+%     \begin{tpfcol}
+%         \begin{verbatim}
+% \begin{tpfcol}
+
+% \end{tpfcol} &
+%             \end{verbatim}
+%     \end{tpfcol}&
+%     \begin{tpscol}
+%         \begin{verbatim}
+% \begin{tpscol}
+
+% \end{tpscol} &
+%         \end{verbatim}
+%     \end{tpscol}&
+%     \begin{tptcol}
+%         \begin{verbatim}
+% \begin{tptcol}
+
+% \end{tptcol} \\
+%         \end{verbatim}
+%     \end{tptcol}\\
+%     \hline
+% \end{TeachingProcedures}
+% \newpage
+% \begin{leftbar}
+%     \section*{作成例}
+% \end{leftbar}
+% \begin{comment}
+% \renewcommand{\tpf}{活動}
+% \renewcommand{\tps}{指導内容}
+% \renewcommand{\tpt}{指導上の留意点及び評価}
+% \begin{oframed}
+%     \showTitle{\today 2時限目}{3年A組}{数学 I 数研出版}{数学}{溝口洸熙}
+%     \begin{attainmentTarget}
+%         \(x\)軸方向への平行移動するグラフの関数を推測し，二次関数\(y=a(x-p)^2\)のグラフを描く．
+%     \end{attainmentTarget}
+%     \begin{TeachingProcedures}
+%         \begin{tpfcol}
+%             \textbf{導入}\\
+%             前回の事前の学習の確認
+%         \end{tpfcol} &
+%         \begin{tpscol}
+%             \fbox{復習}\\
+%             二次関数\(y=2x^2-2\)のグラフを描き
+%             頂点の座標と軸の方程式を求めよ．
+%         \end{tpscol} &
+%         \begin{tptcol}
+%             前時の評価を基に，不十分な生徒に机間指導の際に個別に指導する．
+%         \end{tptcol}\\
+%         \hline
+%         \begin{tpfcol}
+%             \textbf{展開}\\
+%             グラフから関数の 式 \(y=a(x-p)^2\) を推測 する．
+%         \end{tpfcol} &
+%         \begin{tpscol}
+%             \begin{framed}
+%                 \textbf{課題1}\\
+%                 二次関数\(y=2x^2\)のグラフを\(x\)軸方向に1だけ平行移動したグラフを描く．
+%             \end{framed}
+%             \begin{tikzpicture}[scale=0.4]%倍率
+%                 \draw[very thick, -stealth] (-4,0)--(4,0) node[right] {$x$};%x軸
+%                 \draw[very thick, -stealth] (0,-1)--(0,5) node[above] {$y$};%y軸
+%                 \draw[domain=-2:2] plot(\x, {pow(\x,2)})node[above]{\(y=2x^2\)};
+%                 \draw[red,domain=-1:3,thick] plot(\x, {pow(\x,2)-2*\x+1})node[right]{\textcolor{red}{\(y=2(x-1)^2\)}};
+%             \end{tikzpicture}
+%         \end{tpscol} &
+%         \begin{tptcol}
+%             グラフをかくことで，\(x\)軸方向に1だけ平行移動するとはどういうことかを考えさせる．
+%         \end{tptcol}\\
+%     \end{TeachingProcedures}
+% \end{oframed}
+% \begin{EvaluationCriterion}
+%     \begin{itemize}
+%         \item a
+%         \item a
+%         \item
+%     \end{itemize}
+%     & a&a\\
+%     \hline
+% \end{EvaluationCriterion}
+% \end{comment}
 \end{document}
