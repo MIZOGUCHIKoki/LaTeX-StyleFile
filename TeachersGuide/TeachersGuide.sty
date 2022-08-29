@@ -6,6 +6,7 @@
 \newcommand{\tpswidth}{0.5\linewidth}
 \newcommand{\tptwidth}{0.23\linewidth}
 \newcommand{\GuidlineTitle}{学習指導案}
+\newcommand{\attainmentTargetTitle}{到達目標}
 \newcommand{\tpf}{活動}
 \newcommand{\tps}{指導内容}
 \newcommand{\tpt}{指導上の留意点及び評価}
@@ -21,6 +22,24 @@
         指導科目 & #2 
     \end{tabular}
 \end{flushright}
+}
+
+\newcommand{\classInfo}[2]{%
+\begin{leftbar}
+    \begin{tabular}{rl}
+        \textbf{授業日付} & #1\\
+        \textbf{授業学級} & #2        
+    \end{tabular}
+\end{leftbar}
+}
+
+\newenvironment{attainmentTarget}%
+{\vspace{1em}
+    \begin{leftbar}
+        \noindent\textbf{\attainmentTargetTitle}\par
+}%
+{
+    \end{leftbar}
 }
 
 \newenvironment{TeachingProcedures}%

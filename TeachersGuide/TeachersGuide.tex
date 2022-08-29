@@ -104,7 +104,7 @@
     \end{multicols}
 \end{framed}
 \begin{leftbar}
-    \section*{コマンド}
+    \section*{コマンド定義}
 \end{leftbar}
 \begin{table}[h]
     \begin{tabular}{ll|ll}
@@ -123,8 +123,10 @@
     \showTitle{（指導教員名）}{（指導科目名）}
 \end{framed}
 \begin{leftbar}
-    \section*{環境}
+    \section*{環境定義}
 \end{leftbar}
+\noindent\ovalbox{\large\verb|attainmentTarget|}\par
+\textbf{到達目標}を記述する．「到達目標」は\\
 \noindent\ovalbox{\large\verb|TeachingProcedures|}\par
 指導案表の枠を設計する．この環境は\verb|longtable|環境を用いて構築している．従って\verb|tabular|環境同様，列の区切りは\verb| & |を用い，行の区切りは，\verb|\\ |で行う．\par
 ヘッダの部分\footnote{デフォルトでは，活動・指導内容・指導上の留意点及び評価}は，それぞれ括弧内のコマンド\footnote{tpf,tps,tpt}で定義しているので，変更したい場合は，適宜\verb| \renewcommand |\footnote{「活動」を「活動内容」に変更したい場合は，{\ttfamily\textbackslash renewcommand\{\textbackslash tpf\}\{活動内容\}}}で更新する．\vspace{0.5em}\\
@@ -161,62 +163,51 @@
 \begin{leftbar}
     \section*{作成例}
 \end{leftbar}
+
 \renewcommand{\tpf}{活動}
 \renewcommand{\tps}{指導内容}
 \renewcommand{\tpt}{指導上の留意点及び評価}
-\begin{lstlisting}
-\documentclass{jlreq}
-\usepackage{TeachersGuide}
-%%%%%%%%%%%%%%%%%%%%
-%任意のパッケージ・設定
-%%%%%%%%%%%%%%%%%%%%
-\begin{document}
-% タイトル出力
-\showTitle{溝口洸熙}{数学}
-% 表の出力
-\begin{TeachingProcedures}
-    % 1列目の内容
-    \begin{tpfcol}
-        \textbf{導入}\\
-        しっかり復習
-    \end{tpfcol} &
-    % 2列目の内容
-    \begin{tpscol}
-        展開の復習
-        \begin{equation}
-            \begin{aligned}
-                f(x) & = (x-p)^2-q \\
-                     & =x^2-2px-q
-            \end{aligned}\label{eq:ex1}
-        \end{equation}
-    \end{tpscol} &
-    % 3列目の内容
-    \begin{tptcol}
-        展開の計算(\ref{eq:ex1})が理解できるか．
-    \end{tptcol}
-\end{TeachingProcedures}
-\end{document}
-\end{lstlisting}
-\begin{framed}
+\begin{oframed}
     \showTitle{溝口洸熙}{数学}
+    \classInfo{1限目}{3年A組}
+    \begin{attainmentTarget}
+        \(x\)軸方向への平行移動するグラフの関数を推測し，二次関数\(y=a(x-p)^2\)のグラフを描く．
+    \end{attainmentTarget}
     \begin{TeachingProcedures}
         \begin{tpfcol}
             \textbf{導入}\\
-            しっかり復習
+            前回の事前の学習の確認
         \end{tpfcol} &
         \begin{tpscol}
-            展開の復習
-            \begin{equation}
-                \begin{aligned}
-                    f(x) & = (x-p)^2-q \\
-                         & =x^2-2px-q
-                \end{aligned}\label{eq:ex1}
-            \end{equation}
-
+            \fbox{復習}\\
+            二次関数\(y=2x^2-2\)のグラフを描き
+            頂点の座標と軸の方程式を求めよ．
         \end{tpscol} &
         \begin{tptcol}
-            展開の計算（\ref{eq:ex1}）が理解できるか．
-        \end{tptcol}
+            前時の評価を基に不十分な生徒に机間指導の際に個別に指導する．
+        \end{tptcol}\\
+        \hline
+        \begin{tpfcol}
+            \textbf{展開}\\
+            グラフから関数の 式 \(y=a(x-p)^2\) を推測 する．
+        \end{tpfcol} &
+        \begin{tpscol}
+            \begin{framed}
+                \textbf{課題1}\\
+                二次関数\(y=2x^2\)のグラフを\(x\)軸方向に1だけ平行移動したグラフを描く．
+            \end{framed}
+            \begin{center}
+                \begin{tikzpicture}[scale=0.4]%倍率
+                    \draw[very thick, -stealth] (-4,0)--(4,0) node[right] {$x$};%x軸
+                    \draw[very thick, -stealth] (0,-1)--(0,5) node[above] {$y$};%y軸
+                    \draw[domain=-2:2] plot(\x, {pow(\x,2)})node[above]{\(y=2x^2\)};
+                    \draw[red,domain=-1:3,thick] plot(\x, {pow(\x,2)-2*\x+1})node[right]{\textcolor{red}{\(y=2(x-1)^2\)}};
+                \end{tikzpicture}
+            \end{center}
+        \end{tpscol} &
+        \begin{tptcol}
+            グラフをかくことで，\(x\)軸方向に1だけ平行移動するとはどういうことかを考えさせる．
+        \end{tptcol}\\
     \end{TeachingProcedures}
-\end{framed}
+\end{oframed}
 \end{document}
