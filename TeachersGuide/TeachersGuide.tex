@@ -14,12 +14,6 @@
     linkcolor=black,
     urlcolor=blue
 }
-\renewcommand{\lstlistingname}{src.}
-\newcommand{\srcref}[1]{src.\ \ref{#1}}
-\AtBeginDocument{
-    \renewcommand{\thelstlisting}{\arabic{lstlisting}}
-}
-
 \lstset{
         %プログラム言語(複数の言語に対応，C,C++も可)
     language =TeX,
@@ -147,7 +141,7 @@
 \end{leftbar}
 \noindent{\small\url{http://www.tochigi-edu.ed.jp/icnt/kenshu-c-h29/?action=common_download_main&upload_id=12782}参考}\\
 \hrulefill\vspace{1em}
-\showTitle{\today 1時限目}{3年A組}{数学I}{数学I 数研出版}{溝口洸熙}
+\showTitle{9月1日 1校時}{3年A組}{数学I}{数学I 数研出版}{溝口洸熙}
 \unitTitle{二次関数「二次関数とそのグラフ」}
 \begin{UnitGoals}
     \begin{itemize}
@@ -272,14 +266,8 @@
 \begin{center}
     \LaTeX ソースコード
 \end{center}
-\begin{lstlisting}[language=TeX]
-\documentclass{jlreq}
-\usepackage{TeachersGude}
-%%%%
-%その他プリアンブルは省略
-%%%%
-\begin{document}
-\showTitle{\today 1時限目}{3年A組}{数学I}{数学I 数研出版}{溝口洸熙}
+\begin{lstlisting}
+    \showTitle{9月1日 1校時}{3年A組}{数学I}{数学I 数研出版}{溝口洸熙}
 \unitTitle{二次関数「二次関数とそのグラフ」}
 \begin{UnitGoals}
     \begin{itemize}
@@ -400,6 +388,5 @@
     \end{tptcol} \\
     \hline
 \end{TeachingProcedures}
-\end{document}
 \end{lstlisting}
 \end{document}
