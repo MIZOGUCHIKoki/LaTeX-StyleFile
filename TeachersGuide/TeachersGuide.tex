@@ -267,7 +267,13 @@
     \LaTeX ソースコード
 \end{center}
 \begin{lstlisting}
-    \showTitle{9月1日 1校時}{3年A組}{数学I}{数学I 数研出版}{溝口洸熙}
+\documentclass{jlreq}
+\usepackage{TeachersGuide}
+%%%%
+% 他プリアンブルは略
+%%%%
+\begin{document}
+\showTitle{9月1日 1校時}{3年A組}{数学I}{数学I 数研出版}{溝口洸熙}
 \unitTitle{二次関数「二次関数とそのグラフ」}
 \begin{UnitGoals}
     \begin{itemize}
@@ -388,5 +394,6 @@
     \end{tptcol} \\
     \hline
 \end{TeachingProcedures}
+\end{document}
 \end{lstlisting}
 \end{document}
