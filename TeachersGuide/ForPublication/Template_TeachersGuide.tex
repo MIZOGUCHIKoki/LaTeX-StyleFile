@@ -1,4 +1,4 @@
-\documentclass[paper=a4,fontsize=10.5pt]{jlreq}
+\documentclass[paper=a4,fontsize=10pt,dvipdfmx]{jlreq}
 \usepackage[top=20truemm,bottom=20truemm,left=15truemm,right=15truemm]{geometry} %余白設定
 \usepackage{amsmath,array} %数学に必要なパッケージ
 \usepackage{tikz} %グラフ描画に必要なパッケージ
@@ -79,14 +79,6 @@
             \noindent\underline{課題1}\\
             二次関数\(y-2x^2\)のグラフを\(x\)軸方向に1だけ平行移動したグラフを描く．
         \end{framed}
-        \begin{center}
-            \begin{tikzpicture}[scale=0.4]%倍率
-                \draw[thick, -latex] (-4,0)--(4,0) node[right] {$x$};%x軸
-                \draw[thick, -latex] (0,-1)--(0,5) node[above] {$y$};%y軸
-                \draw[domain=-2:2,dotted] plot(\x, {pow(\x,2)})node[above]{\textcolor{gray}{\(y=2x^2\)}};
-                \draw[domain=-1:3,thick] plot(\x, {pow(\x,2)-2*\x+1})node[right]{{\(y=2(x-1)^2\)}};
-            \end{tikzpicture}
-        \end{center}
         \vspace{0.5em}
         \begin{equation}
             \begin{aligned}

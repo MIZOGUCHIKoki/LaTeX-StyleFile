@@ -2,9 +2,9 @@
 \ProvidesPackage{TeachersGuide}[2020/10/10]
 \usepackage{longtable,framed}
 
-\newcommand{\tpfwidth}{0.15\linewidth}
-\newcommand{\tpswidth}{0.57\linewidth}
-\newcommand{\tptwidth}{0.24\linewidth}
+\newcommand{\tpfwidth}{0.14\linewidth}
+\newcommand{\tpswidth}{0.56\linewidth}
+\newcommand{\tptwidth}{0.23\linewidth}
 \newcommand{\guideTitle}{学習指導案}
 
 \newcommand{\enumiA}{\renewcommand{\labelenumi}{\fbox{A\arabic{enumi}}\ }}
@@ -67,7 +67,7 @@
 \newenvironment{EvaluationCriterion}% %%評価規準
 {
     \showSection{評価規準}
-    \begin{longtable}[c]{|p{0.33\linewidth}|p{0.33\linewidth}|p{0.33\linewidth}|}
+    \begin{longtable}[c]{|p{0.31\linewidth}|p{0.31\linewidth}|p{0.31\linewidth}|}
         \hline
         \multicolumn{1}{|c|}{知識・技能 [A]} & \multicolumn{1}{c|}{思考・判断・表現 [B]} & \multicolumn{1}{c|}{主体的に学習に取り組む態度 [C]}\\
         \hline
@@ -83,7 +83,7 @@
     \newcounter{timeCount}
     \setcounter{timeCount}{0}
     \newcommand{\timeCount}[1][]{\refstepcounter{timeCount}第\arabic{timeCount}時間}
-    \begin{longtable}[c]{|wc{0.1\linewidth}|p{0.4\linewidth}|wc{0.17\linewidth}|p{0.3\linewidth}|}
+    \begin{longtable}[c]{|wc{0.1\linewidth}|p{0.41\linewidth}|wc{0.15\linewidth}|p{0.25\linewidth}|}
         \hline
         時間 & \multicolumn{1}{c|}{学習活動} & 評価規準 & \multicolumn{1}{c|}{評価方法}\\
         \hline
@@ -129,7 +129,7 @@
         \vspace{0.5em}
         \fontsize{8pt}{12pt}\selectfont
         \renewcommand{\arraystretch}{1.2}
-        \begin{longtable}[c]{|c|c|c|}
+        \begin{longtable}[c]{|wc{\tpfwidth}|wc{\tpswidth}|wc{\tptwidth}|}
             \hline
             {\tpf} & {\tps} & {\tpt}\\
             \hline
