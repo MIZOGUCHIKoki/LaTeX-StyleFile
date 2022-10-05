@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{TeachersGuide}[2020/10/10]
-\usepackage{longtable,framed}
+\usepackage{longtable,framed,fancybox}
 
 \newcommand{\tpfwidth}{0.14\linewidth}
 \newcommand{\tpswidth}{0.56\linewidth}
@@ -124,19 +124,21 @@
 
 
 \newenvironment{TeachingProcedures}% %%指導計画表
-    {
-        \showSection{本時の展開}
-        \vspace{0.5em}
-        \fontsize{8pt}{12pt}\selectfont
-        \renewcommand{\arraystretch}{1.2}
-        \begin{longtable}[c]{|wc{\tpfwidth}|wc{\tpswidth}|wc{\tptwidth}|}
-            \hline
-            {\tpf} & {\tps} & {\tpt}\\
-            \hline
-            }%
-            {\end{longtable}
-        \normalsize
-        }
+{
+    \begin{leftbar}
+    \noindent\textbf{本時の展開}
+    \end{leftbar}
+    \vspace{0.5em}
+    \fontsize{8pt}{12pt}\selectfont
+    \renewcommand{\arraystretch}{1.2}
+    \begin{longtable}[c]{|wc{\tpfwidth}|wc{\tpswidth}|wc{\tptwidth}|}
+    \hline
+    {\tpf} & {\tps} & {\tpt}\\
+    \hline
+}{
+    \end{longtable}
+    \normalsize
+}
 \newenvironment{tpfcol}%
 {
     \begin{minipage}{\tpfwidth}
@@ -163,5 +165,10 @@
 {
     \vspace{0.5em}
     \end{minipage}
+}
+\newenvironment{Evalution}{%
+    \begin{itembox}[l]{評価}
+}{%
+    \end{itembox}
 }
 \endinput
