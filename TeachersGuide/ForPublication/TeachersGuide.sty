@@ -1,19 +1,12 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{TeachersGuide}[2020/10/10]
 \usepackage{longtable,framed,fancybox}
-
-\newcommand{\tpfwidth}{0.14\linewidth}
-\newcommand{\tpswidth}{0.56\linewidth}
-\newcommand{\tptwidth}{0.23\linewidth}
+\usepackage[top=20truemm,bottom=20truemm,left=10truemm,right=10truemm]{geometry}
 \newcommand{\guideTitle}{学習指導案}
 
 \newcommand{\enumiA}{\renewcommand{\labelenumi}{\fbox{A\arabic{enumi}}\ }}
 \newcommand{\enumiB}{\renewcommand{\labelenumi}{\fbox{B\arabic{enumi}}\ }}
 \newcommand{\enumiC}{\renewcommand{\labelenumi}{\fbox{C\arabic{enumi}}\ }}
-
-\newcommand{\tpf}{活動}
-\newcommand{\tps}{指導内容}
-\newcommand{\tpt}{指導上の留意点及び評価}
 
 \newcounter{sectionCount}
 \setcounter{sectionCount}{0}
@@ -67,7 +60,7 @@
 \newenvironment{EvaluationCriterion}% %%評価規準
 {
     \showSection{評価規準}
-    \begin{longtable}[c]{|p{0.31\linewidth}|p{0.31\linewidth}|p{0.31\linewidth}|}
+    \begin{longtable}[c]{|p{0.31\textwidth}|p{0.31\textwidth}|p{0.31\textwidth}|}
         \hline
         \multicolumn{1}{|c|}{知識・技能 [A]} & \multicolumn{1}{c|}{思考・判断・表現 [B]} & \multicolumn{1}{c|}{主体的に学習に取り組む態度 [C]}\\
         \hline
@@ -83,9 +76,9 @@
     \newcounter{timeCount}
     \setcounter{timeCount}{0}
     \newcommand{\timeCount}[1][]{\refstepcounter{timeCount}第\arabic{timeCount}時間}
-    \begin{longtable}[c]{|wc{0.1\linewidth}|p{0.41\linewidth}|wc{0.15\linewidth}|p{0.25\linewidth}|}
+    \begin{longtable}[c]{|p{0.1\linewidth}|p{0.41\linewidth}|wc{0.15\linewidth}|p{0.25\linewidth}|}
         \hline
-        時間 & \multicolumn{1}{c|}{学習活動} & 評価規準 & \multicolumn{1}{c|}{評価方法}\\
+        \multicolumn{1}{|c|}{時間} & \multicolumn{1}{c|}{学習活動} & 評価規準 & \multicolumn{1}{c|}{評価方法}\\
         \hline
 
 }{
@@ -106,7 +99,6 @@
     \begin{leftbar}
             \noindent{\large\textbf{本時の計画}}
         \end{leftbar}
-        \setcounter{sectionCount}{0}
     \showSection{本時の到達目標}\ (評価規準)
     \begin{quote}
 }%
@@ -130,45 +122,48 @@
     \end{leftbar}
     \vspace{0.5em}
     \fontsize{8pt}{12pt}\selectfont
-    \renewcommand{\arraystretch}{1.2}
-    \begin{longtable}[c]{|wc{\tpfwidth}|wc{\tpswidth}|wc{\tptwidth}|}
+    % \renewcommand{\arraystretch}{1.2}
+    
+    \begin{longtable}[c]{|p{.04\textwidth}|p{.4\textwidth}|p{.3\textwidth}|p{.2\textwidth}|}
     \hline
-    {\tpf} & {\tps} & {\tpt}\\
+    \multicolumn{1}{|c}{段階} & \multicolumn{1}{|c}{学習活動} & \multicolumn{1}{|c}{指導上の留意点} & \multicolumn{1}{|c|}{評価の観点} \\
     \hline
 }{
     \end{longtable}
+    
     \normalsize
 }
-\newenvironment{tpfcol}%
+\newenvironment{tpacol}%
 {
-    \begin{minipage}{\tpfwidth}
+    \begin{minipage}[t]{.99\linewidth}
         \vspace{0.5em}
 }%
 {
     \vspace{0.5em}
     \end{minipage}
     }
-\newenvironment{tpscol}%
+\newenvironment{tpbcol}%
 {
-    \begin{minipage}{\tpswidth}
-        \vspace{0.5em}
+    \begin{minipage}[t]{.99\linewidth}
 }%
 {
-        \vspace{0.5em}
     \end{minipage}
 }
-\newenvironment{tptcol}%
+\newenvironment{tpccol}%
 {
-    \begin{minipage}{\tptwidth}
-        \vspace{0.5em}
+    \begin{minipage}[t]{.99\linewidth}
 }%
 {
     \vspace{0.5em}
     \end{minipage}
 }
-\newenvironment{Evalution}{%
-    \begin{itembox}[l]{評価}
-}{%
-    \end{itembox}
+\newenvironment{tpdcol}%
+{
+    \begin{minipage}[t]{.99\linewidth}
+        \vspace{0.5em}
+}%
+{
+    \vspace{0.5em}
+    \end{minipage}
 }
 \endinput
