@@ -1,19 +1,22 @@
 \documentclass[paper=a4,fontsize=10pt]{jlreq}
 \usepackage{amsmath,amsfonts,array,ascmac,amssymb} %数学に必要なパッケージ
 \usepackage{tikz} %グラフ描画に必要なパッケージ
-\usepackage{TeachersGuide}
-\usetikzlibrary{calc}
+\usepackage{TeachersGuide} %学習指導案パッケージ
+\usepackage{multirow,tcolorbox} %表縦結合パッケージ
+\usepackage{tcolorbox} %tcolorbox用のパッケージ
+    \tcbuselibrary{raster,skins,breakable,theorems} %tcolorbox用のパッケージ
+    \usetikzlibrary{calc} %グラフ描画に必要なパッケージ
 \begin{document}
 \showTitle{9月1日 1校時}{3年A組}{数学I}{数学I 数研出版}{溝口洸熙}
 \unitTitle{二次関数「二次関数とそのグラフ」}
 \begin{UnitGoals}
     \begin{itemize}
-        \item 表，式，グラフなどを用いて数量の変化を表現することの有用性を認識し，関数の考えを具体的な事象の考察に活用しようとする．
-        \item 関数の概念\dots
+        \item 目標1
+        \item 目標2
     \end{itemize}
 \end{UnitGoals}
 \begin{UnitView}
-    \ \ 二次関数は，高校数学の中で最も基礎的であり，かつ重要な単元である．二次関数を扱い，関数概念の理解を深め，関数を用いて数量の変化を表現することの有用性を認識できるよう\dots
+    単元観を書く．\verb|\par|で改行字下げする．
 \end{UnitView}
 \begin{EvaluationCriterion}
     \begin{enumerate}
@@ -34,33 +37,63 @@
     \hline
 \end{EvaluationCriterion}
 \begin{UnitPlan}
-    第1時間目 & 関数の定義について学び，関数の値，値域を求める．& \fbox{A1}，\fbox{B2} & 観察・小テスト・自己評価\\
+    第1時間目 & 1時間目の学習活動を書く．& \fbox{A1}，\fbox{B2} & 観察・小テスト・自己評価\\
     \hline
-    第2時間目 & 関数のグラフの意味について学び，1時間数の最大値と最小値を求める．& \fbox{B1}，\fbox{B2} & 観察・ワークシート\\
+    第2時間目 & 2時間目の学習活動を書く．& \fbox{B1}，\fbox{B2} & 観察・ワークシート\\
     \hline
-    第3時間目 & 二次関数\(y=ax^2,y=ax^2+q\)のグラフを描く． & \fbox{A2}，\fbox{B1} & 観察・ワークシート・自己評価\\
+    第3時間目 & 3時間目の学習活動を書く．& \fbox{A2}，\fbox{B1} & 観察・ワークシート・自己評価\\
 \end{UnitPlan}
 \begin{StudentFacts}
-    \ \ 中学校で習った一次関数\(y=ax+b\)や二次関数\(y=ax^2\)に対して苦手意識のある生徒が多く，グラフをかくことができない，関数とグラフの関係が分からないという生徒もいる．\par
-    \ \ また，\dots
+    現在の生徒の実態を記入する．\verb|\par|で改行字下げする．
 \end{StudentFacts}
+\newpage
 \begin{ClassGoal}
     \begin{itemize}
-        \item \(x\)軸方向へ平行移動する二次関数のグラフについて関心をもち，調べようとする．\fbox{C1}
-        \item 二次関数 \(y=ax^2\)を\(x\)軸方向へ\(p\)だけ平行移動したグラフから二次関数の式を考察できる．\fbox{B1}
+        \item 本時の到達目標その1．
+        \item 本時の到達目標その2．
     \end{itemize}
 \end{ClassGoal}
 \begin{ClassPoint}
-    \ \ 二次関数$y=a(x-p)^2$のグラフを考えるに当たって，先に式を与えてグラフをかかせることが一般的であるが，\dots
+    本時のポイントを書く．\verb|\par|で改行字下げする．
 \end{ClassPoint}
 \begin{TeachingProcedures}
-    &
+    \begin{tpacol}
+        \begin{center}
+            tpacol
+        \end{center}
+    \end{tpacol} &
     \begin{tpbcol}
-        \indent 半径\(r\)円の面積\(S\)の求め方を復習する．（\(S=\pi r^2\)）\\
+        \begin{center}
+            tpbcol環境
+        \end{center}
+    \end{tpbcol} &
+    \begin{tpccol}
+        \begin{center}
+            tpccol環境
+        \end{center}
+    \end{tpccol} &
+    \begin{tpdcol}
+        \begin{center}
+            tpdcol環境
+        \end{center}
+    \end{tpdcol}\\
+    \hline
+    \begin{tpacol}
+        \begin{center}
+            導入
+        \end{center}
+    \end{tpacol}&
+    \begin{tpbcol}
+        何かしらの導入\\
         \dotfill\\
-        \indent ある曲線\(y=f(x)\)と\(x\)軸，及び2直線\(x=a\textrm{，}x=b\)で囲まれた部分の面積を求める方法を復習する．
+        \verb|\dotfill\\|で，点線を挿入できる．
     \end{tpbcol}& &
     \\
+    \begin{tpacol}
+        \begin{center}
+            {\tiny\verb|tpacol|\\環境}
+        \end{center}
+    \end{tpacol}
     & \begin{tpbcol}
         \begin{framed}
             \noindent\textbf{復習問題1}\par
@@ -94,26 +127,42 @@
         \end{framed}
     \end{tpbcol} &
     \begin{tpccol}
+        \begin{framed}
+            \begin{verbatim}
+\begin{framed}
+    で，囲いができる．
+\end{framed}
+            \end{verbatim}
+        \end{framed}
+        \begin{tcolorbox}[title=tcolorbox]
+            tcolorbox の設置も可能．
+        \end{tcolorbox}
     \end{tpccol} &
     \begin{tpdcol}
     \end{tpdcol}\\
     \hline
     &
     \begin{tpbcol}
-        \textbf{回転体(具体例)}\\
-        \indent\(a<b\)のとき，曲線\(y=\sqrt{x}\)と\(x\)軸，及び2直線\(x=1\textrm{，}x=2\)で囲まれた部分を，\(x\)軸の周りに1回転させてできる立体の体積\(V\)を考える．\par
-        \indent ある\(x\)軸上の点A\((1,0)\)で考える．\underline{半径}に着目して，断面積を求めたい．\(x\)軸上の点\((x',0)\)の断面積は，\((\sqrt{x'})^2\times \pi\)で求めることができる．\\
-        \indent 従って，断面積を\(S(x)\)とすると，\(S(x)=\pi(\sqrt{x})^2\)となる．回転体の面積を求めるためには，\(1\leqq x \leqq 2\)の範囲で\(S(x)\)を求める必要があるので，\(S(x)\)を\(1\leqq x \leqq 2\)の範囲で\(x\)について積分して，回転体の面積を求める．つまり，
+        \textbf{数式の表現}\\
+        \verb|align,equation|で，数式に番号を振ったり，\(=\)で揃えたり．
+        \begin{verbatim}
+\begin{equation}
+    \begin{aligned}
+        V & = \int_{1}^{2} S(x) dx\\
+        & = \pi\int_{1}^{2} 
+            \big\{\sqrt{x}\big\}^2 dx = \pi
+    \end{aligned}
+\end{equation}
+        \end{verbatim}
         \begin{equation}
             \begin{aligned}
                 V & = \int_{1}^{2} S(x) dx                            \\
                   & = \pi\int_{1}^{2} \big\{\sqrt{x}\big\}^2 dx = \pi
             \end{aligned}
         \end{equation}
-        で求めることができる．
     \end{tpbcol} &
     \begin{tpccol}
-        \textbf{黒板にグラフを描画して考えるように促す}
+        \textbf{頑張ったら回転体も描ける．}
         \begin{center}
             \begin{tikzpicture}[samples=300,scale=0.9]
                 \def\Fx{plot(\x,{sqrt(\x)})};
@@ -154,6 +203,20 @@
         \end{center}
     \end{tpccol} &
     \begin{tpdcol}
+        \begin{tcolorbox}[%
+                enhanced,
+                colframe = red,
+                colback = red!10,
+                title = {tcolorbox},
+                fonttitle = \bfseries,
+                coltitle = black,
+                breakable = true,
+                attach boxed title to top left = {xshift = 3mm, yshift = -3mm},
+                boxed title style = {colframe = red, colback = red!10},
+                top = 4mm
+            ]
+            タイトル出力変えたり，色を変えたり．
+        \end{tcolorbox}
     \end{tpdcol} \\
     &
     \begin{tpbcol}
@@ -168,39 +231,41 @@
             \((a<b)\)
         \end{flushright}
     \end{tpbcol} &
-    \begin{tpccol}
-
-    \end{tpccol} &
-    \begin{tpdcol}
-
-    \end{tpdcol}\\
-    \hline
-    &
+    \multicolumn{2}{c|}{%
+        \begin{minipage}[t]{0.4\linewidth}
+            \begin{framed}
+                列を跨いで，いろいろできる．
+                \begin{align*}
+                    V = \pi\int_{a}^{b}\big\{f(x)\big\}^2dx = \pi\int_{a}^{b}y^2dx
+                \end{align*}
+            \end{framed}
+        \end{minipage}
+    }
+    \\
+    \begin{tpacol}
+    \end{tpacol} &
     \begin{tpbcol}
-        \textbf{例題5}\\
-        \indent この例題を用いて，教科書を見ながら一度解き方を確認する．
-        \begin{itemize}
-            \setlength{\leftskip}{-1em}
-            \item \(\cos ^2 x\)の積分を確認をする．
-        \end{itemize}
-        \dotfill
+        \begin{tcolorbox}[%
+                enhanced,
+                colframe = green!20!gray,
+                colback = green!5,
+                title = {超大切な公式},
+                fonttitle = \bfseries,
+                coltitle = white,
+                breakable = true,
+                boxed title style = {colframe = green!20!gray, colback = green!5},
+                top = 4mm
+            ]
+            一般的に，曲線\(y=f(x)\)と\(x\)軸，及び2直線\(x=a\textrm{，}x=b (a<b)\)で囲まれた部分を，\(x\)軸の周りに1回転させてできる立体の体積を\(V\)とすると，以下の公式が得られる．
+            \begin{align*}
+                V = \pi\int_{a}^{b}\big\{f(x)\big\}^2dx = \pi\int_{a}^{b}y^2dx
+            \end{align*}
+        \end{tcolorbox}
     \end{tpbcol} &
     \begin{tpccol}
-        \textbf{問題のすすめ方}\\
-        \indent 実際にグラフを描いて，教科書に沿った方法で説明する．そして，他の解法を思いついた生徒には挙手させ，説明させる．その解法が正解かどうかをみんなで議論する．\\
-        \dotfill
-    \end{tpccol} &
-    \begin{tpdcol}
-
-    \end{tpdcol}\\
-    &
-    \begin{tpbcol}
-        \textbf{問題8}\\
-        \indent 15分間で，（1），（2）を解く．
-    \end{tpbcol} &
-    \begin{tpccol}
-        \textbf{問題のすすめ方}\\
-        \indent グラフを書くように促す．
+        \begin{center}
+            \verb|tcolorbox|も積極的に！
+        \end{center}
     \end{tpccol} &
     \begin{tpdcol}
 
