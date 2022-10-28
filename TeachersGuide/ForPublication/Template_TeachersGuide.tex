@@ -1,4 +1,5 @@
 \documentclass[paper=a4,fontsize=10pt]{jlreq}
+%余白はスタイルファイルで設定してあります．ここで再宣言するとエラーになります．
 \usepackage{amsmath,amsfonts,array,ascmac,amssymb} %数学に必要なパッケージ
 \usepackage{tikz} %グラフ描画に必要なパッケージ
 \usepackage{TeachersGuide} %学習指導案パッケージ
@@ -80,32 +81,30 @@
             \noindent\textbf{復習問題1}\par
             曲線\(y=\sqrt{x}\)と\(x\)軸，及び2直線\(x=1\textrm{，}x=2\)で囲まれた部分の面積を求めよ．
         \end{framed}
-        \begin{framed}
-            \begin{minipage}[c]{0.4\linewidth}
-                \noindent\textbf{解答}（期待する解答）
-                \begin{equation*}
-                    \begin{aligned}
-                        S & =\int_{1}^{2}\sqrt{x}\quad dx                      \\
-                          & = \left[\dfrac{2}{3}x^{\frac{3}{2}}\right]^{2}_{1} \\
-                          & = \dfrac{2}{3}\cdot 2^{\frac{3}{2}}-\dfrac{2}{3}   \\
-                          & =\dfrac{2}{3}\left(2\sqrt{2}-1\right)
-                    \end{aligned}
-                \end{equation*}
-            \end{minipage}
-            \begin{minipage}[c]{0.56\linewidth}
-                \centering
-                \begin{tikzpicture}[samples=300,scale=0.5]
-                    \fill[fill=gray!20] plot[domain=1:2](\x, {sqrt(\x)})--(2,0)--(1,0)--cycle;
-                    \draw[-latex,thick](-0.5,0)--(3,0)node[below]{\(x\)};
-                    \draw[-latex,thick](0,-0.5)--(0,2)node[above]{\(y\)};
-                    \node[below left] at(0,0){O};
-                    \draw[domain=0:2.5] plot(\x, {sqrt(\x)})node[right]{\scriptsize \(y=\sqrt{x}\)};
-                    \node at ($(2,0)!0.5!(1,1)$){\(S\)};
-                    \draw[dotted](1,0)node[below]{1}--(1,1);
-                    \draw[dotted](2,0)node[below]{2}--(2,{sqrt(2)});
-                \end{tikzpicture}
-            \end{minipage}
-        \end{framed}
+        \begin{minipage}[c]{0.4\linewidth}
+            \noindent\textbf{解答}（期待する解答）
+            \begin{equation*}
+                \begin{aligned}
+                    S & =\int_{1}^{2}\sqrt{x}\quad dx                      \\
+                      & = \left[\dfrac{2}{3}x^{\frac{3}{2}}\right]^{2}_{1} \\
+                      & = \dfrac{2}{3}\cdot 2^{\frac{3}{2}}-\dfrac{2}{3}   \\
+                      & =\dfrac{2}{3}\left(2\sqrt{2}-1\right)
+                \end{aligned}
+            \end{equation*}
+        \end{minipage}
+        \begin{minipage}[c]{0.56\linewidth}
+            \centering
+            \begin{tikzpicture}[samples=300,scale=0.5]
+                \fill[fill=gray!20] plot[domain=1:2](\x, {sqrt(\x)})--(2,0)--(1,0)--cycle;
+                \draw[-latex,thick](-0.5,0)--(3,0)node[below]{\(x\)};
+                \draw[-latex,thick](0,-0.5)--(0,2)node[above]{\(y\)};
+                \node[below left] at(0,0){O};
+                \draw[domain=0:2.5] plot(\x, {sqrt(\x)})node[right]{\scriptsize \(y=\sqrt{x}\)};
+                \node at ($(2,0)!0.5!(1,1)$){\(S\)};
+                \draw[dotted](1,0)node[below]{1}--(1,1);
+                \draw[dotted](2,0)node[below]{2}--(2,{sqrt(2)});
+            \end{tikzpicture}
+        \end{minipage}
     \end{tpbcol} &
     \begin{tpccol}
         \begin{framed}
@@ -115,9 +114,6 @@
 \end{framed}
             \end{verbatim}
         \end{framed}
-        \begin{tcolorbox}[title=tcolorbox]
-            tcolorbox の設置も可能．
-        \end{tcolorbox}
     \end{tpccol} &
     \begin{tpdcol}
     \end{tpdcol}\\
@@ -221,11 +217,9 @@
     \end{tpacol} &
     \multicolumn{2}{c|}{%
         \begin{minipage}{0.65\linewidth}
-            \vspace{2em}
-            \begin{framed}
-                \textbf{微分の定義}
+            \begin{tcolorbox}[title=微分の定義（tcolorboxを利用）]
                 \[ f’ (x) = \dfrac{d}{dx}f(x) = \lim_{h \to 0} \frac{f(x+h)– f(x)}{h} \]
-            \end{framed}
+            \end{tcolorbox}
         \end{minipage}
     } &
     \begin{tpdcol}
