@@ -203,20 +203,6 @@
         \end{center}
     \end{tpccol} &
     \begin{tpdcol}
-        \begin{tcolorbox}[%
-                enhanced,
-                colframe = red,
-                colback = red!10,
-                title = {tcolorbox},
-                fonttitle = \bfseries,
-                coltitle = black,
-                breakable = true,
-                attach boxed title to top left = {xshift = 3mm, yshift = -3mm},
-                boxed title style = {colframe = red, colback = red!10},
-                top = 4mm
-            ]
-            タイトル出力変えたり，色を変えたり．
-        \end{tcolorbox}
     \end{tpdcol} \\
     &
     \begin{tpbcol}
@@ -232,43 +218,33 @@
         \end{flushright}
     \end{tpbcol} &
     \multicolumn{2}{c|}{%
-        \begin{minipage}[t]{0.4\linewidth}
+        \begin{minipage}[t]{0.45\linewidth}
             \begin{framed}
-                列を跨いで，いろいろできる．
-                \begin{align*}
-                    V = \pi\int_{a}^{b}\big\{f(x)\big\}^2dx = \pi\int_{a}^{b}y^2dx
-                \end{align*}
+                列を跨いで，いろいろできる．\\
+                \textbf{オイラーの公式とオイラーの等式}
+                \begin{equation}
+                    \begin{aligned}
+                        e^{i\theta} & = \cos\theta + i \sin\theta \\
+                        e^{i\pi}    & = -1
+                    \end{aligned}
+                \end{equation}
             \end{framed}
         \end{minipage}
     }
-    \\
+    \\ & & 列を跨ぐために，\verb|\multicolumn|を利用する． & \\
     \begin{tpacol}
     \end{tpacol} &
-    \begin{tpbcol}
-        \begin{tcolorbox}[%
-                enhanced,
-                colframe = green!20!gray,
-                colback = green!5,
-                title = {超大切な公式},
-                fonttitle = \bfseries,
-                coltitle = white,
-                breakable = true,
-                boxed title style = {colframe = green!20!gray, colback = green!5},
-                top = 4mm
-            ]
-            一般的に，曲線\(y=f(x)\)と\(x\)軸，及び2直線\(x=a\textrm{，}x=b (a<b)\)で囲まれた部分を，\(x\)軸の周りに1回転させてできる立体の体積を\(V\)とすると，以下の公式が得られる．
-            \begin{align*}
-                V = \pi\int_{a}^{b}\big\{f(x)\big\}^2dx = \pi\int_{a}^{b}y^2dx
-            \end{align*}
-        \end{tcolorbox}
-    \end{tpbcol} &
-    \begin{tpccol}
-        \begin{center}
-            \verb|tcolorbox|も積極的に！
-        \end{center}
-    \end{tpccol} &
+    \multicolumn{2}{c|}{%
+        \begin{minipage}{0.65\linewidth}
+            \vspace{2em}
+            \begin{framed}
+                \textbf{微分の定義}
+                \[ f’ (x) = \dfrac{d}{dx}f(x) = \lim_{h \to 0} \frac{f(x+h)– f(x)}{h} \]
+            \end{framed}
+        \end{minipage}
+    } &
     \begin{tpdcol}
-
+        \[{}_n\mathrm{C}_r=\dfrac{n!}{r!(n-r)!}\]
     \end{tpdcol}\\
 \end{TeachingProcedures}
 \end{document}
