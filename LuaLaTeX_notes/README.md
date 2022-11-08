@@ -6,5 +6,5 @@ $ lualatex file.tex
 ```
 でPDFが生成される．
 # Tableofcontent
-- [`document class`](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/blob/main/LuaLaTeX_notes/Preamble_LuaTeX.md)
+- [`document class`](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/blob/main/LuaLaTeX_notes/01DocumentClass.md)
 - 
