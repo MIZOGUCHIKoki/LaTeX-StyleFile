@@ -1,10 +1,10 @@
-$B!!$3$l$O!$OBJ8(B`LuaLaTeX`$B$G$NMxMQ$rA[Dj$7$?(BLaTeX$B$N(BPreamble$B$K4X$9$k5-;v$G$9!%!J40A4$K8D?ME*%a%b!K(B
-# $B%3%s%Q%$%k(B
-$B!!(B`file.tex`$B$KBP$7$F!$(B`LuaLaTeX`$B$G%3%s%Q%$%k$9$k$K$O!$(B
+# 概要
+このドキュメントは，`LuaLaTeX`での文書作成に必要なPreambleをまとめたもの．完全に個人的メモ．
+# コンパイル
 ```Bash
 $ lualatex file.tex
 ```
-$B$G(BPDF$B$,@8@.$5$l$k!%(B
+でPDFが生成される．
 # Tableofcontent
-- [`document class`]()
+- [`document class`](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/blob/main/LuaLaTeX_notes/Preamble_LuaTeX.md)
 - 
