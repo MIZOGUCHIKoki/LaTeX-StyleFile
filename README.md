@@ -6,5 +6,7 @@
 * XeXTeX
 * LuaLaTeX
 ## TeachersGuide
-  [TeachersGuide](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/tree/main/TeachersGuide)は学習指導案作成用のテンプレートです．</p>
-  このテンプレートは改良され，[Cloud LaTeX](https://cloudlatex.io/)で利用されています．
+- [TeachersGuide](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/tree/main/TeachersGuide)は学習指導案作成用のテンプレートです．</p>
+- このテンプレートは改良され，[Cloud LaTeX](https://cloudlatex.io/)で利用されています．
+## LuaLaTeX_notes
+- LuaLaTeXに関するメモ帳
