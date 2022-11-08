@@ -30,10 +30,8 @@
 - 文字サイズ
   - 10pt, 11pt, 12pt ... など．（10ptがデフォルト）
 - 用紙サイズ
-  - `jlreq`, `jsarticle`, `jreport`クラス
-    - `a4paper`, `b4paper`など．
-  - `ltjsreport`, `ltjsarticle`クラス
-    - `a4`, `b4`など．
+  - `a4paper`, `b4paper`など．
+
 - 段組
   - 1段組：`onecolumn`（デフォルト）
   - 2段組：`twocolumn`
