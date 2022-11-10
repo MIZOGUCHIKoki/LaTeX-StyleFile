@@ -5,6 +5,6 @@
 $ lualatex file.tex
 ```
 でPDFが生成される．
-# Tableofcontent
+# Table of contents
 - [ドキュメントクラス](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/blob/main/LuaLaTeX_notes/01DocumentClass.md)
 - [余白](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/blob/main/LuaLaTeX_notes/02mergin.md)
