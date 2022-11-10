@@ -1,6 +1,7 @@
 # `ams`パッケージに関する記述
 ## `amsmath`, `amssymb`
 AMS-LaTeXを使うと より複雑な数学記号が使えたり，行列をより簡単に記述できたりする．`amsmath`, `amssymb`を読み込む必要がある．
+詳しくは[こちら](http://www.slis.tsukuba.ac.jp/~fujisawa.makoto.fu/cgi-bin/wiki/index.php?AMS-LaTeX)
 ```TeX
 \usepackage{amsmath,amssymb}
 ```
