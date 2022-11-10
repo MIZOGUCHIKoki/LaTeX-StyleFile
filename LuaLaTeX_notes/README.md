@@ -8,3 +8,4 @@ $ lualatex file.tex
 # Table of contents
 1. [ドキュメントクラス](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/blob/main/LuaLaTeX_notes/01DocumentClass.md)
 1. [余白](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/blob/main/LuaLaTeX_notes/02mergin.md)
+1. [AMS-LaTeX](https://github.com/MIZOGUCHIKoki/LaTeX-StyleFile/blob/main/LuaLaTeX_notes/amspackage.md)
