@@ -1,0 +1,168 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{TeachersGuide}[2020/10/10]
+\usepackage{longtable,framed,fancybox}
+\usepackage[top=20truemm,bottom=20truemm,left=10truemm,right=10truemm]{geometry}
+\newcommand{\guideTitle}{学習指導案}
+
+\newcommand{\enumiA}{\renewcommand{\labelenumi}{\fbox{A\arabic{enumi}}\ }}
+\newcommand{\enumiB}{\renewcommand{\labelenumi}{\fbox{B\arabic{enumi}}\ }}
+\newcommand{\enumiC}{\renewcommand{\labelenumi}{\fbox{C\arabic{enumi}}\ }}
+
+\newcounter{sectionCount}
+\setcounter{sectionCount}{0}
+\newcommand{\sectionCount}[1][]{\refstepcounter{sectionCount}\arabic{sectionCount}.}
+\newcommand{\showSection}[1]{\noindent\textbf{\sectionCount #1}}
+
+\newcommand{\showTitle}[5]{% %%タイトル・指導情報
+\begin{center}
+    {\LARGE \guideTitle}
+\end{center}
+\begin{flushright}
+    \begin{flushleft}
+        \today 更新
+    \end{flushleft}
+    \begin{tabular}{ll}
+        授業日 & #1 \\
+        学級 & #2\\
+        指導科目 & #3\\
+        使用教科書 & #4\\ 
+        授業者 & #5
+    \end{tabular}
+\end{flushright}
+}
+
+\newcommand{\unitTitle}[1]% %%単元名
+{   
+        \begin{leftbar}
+            \noindent{\large\textbf{単元の指導計画・評価計画}}
+        \end{leftbar}
+        \vspace{0.5em}
+        \showSection{単元名}
+        \hspace{1em}#1 \par
+}
+
+\newenvironment{UnitGoals}% %%単元の目標
+{
+    \showSection{単元の目標}
+    \begin{quote}
+}{
+    \end{quote}
+}
+
+\newenvironment{UnitView}% %%単元観
+{
+    \showSection{単元観}
+    \begin{quotation}      
+}{            
+    \end{quotation}
+}
+
+\newenvironment{EvaluationCriterion}% %%評価規準
+{
+    \showSection{評価規準}
+    \begin{longtable}[c]{|p{0.31\textwidth}|p{0.31\textwidth}|p{0.31\textwidth}|}
+        \hline
+        \multicolumn{1}{|c|}{知識・技能 [A]} & \multicolumn{1}{c|}{思考・判断・表現 [B]} & \multicolumn{1}{c|}{主体的に学習に取り組む態度 [C]}\\
+        \hline
+}%
+{
+    \end{longtable}
+}
+
+
+\newenvironment{UnitPlan}% %%単元計画
+{
+    \showSection{単元の授業計画並びに評価計画}
+    \newcounter{timeCount}
+    \setcounter{timeCount}{0}
+    \newcommand{\timeCount}[1][]{\refstepcounter{timeCount}第\arabic{timeCount}時間}
+    \begin{longtable}[c]{|p{0.1\linewidth}|p{0.41\linewidth}|p{0.15\linewidth}|p{0.25\linewidth}|}
+        \hline
+        \multicolumn{1}{|c|}{時間} & \multicolumn{1}{c|}{学習活動} & \multicolumn{1}{c|}{評価規準} & \multicolumn{1}{c|}{評価方法}\\
+        \hline
+
+}{
+    \end{longtable}
+}
+
+\newenvironment{StudentFacts}% %%生徒の実態
+{
+    \showSection{生徒の実態}
+    \begin{quotation}
+        
+}{
+    \end{quotation}
+}
+
+\newenvironment{ClassGoal}% %%到達目標
+{   
+    \begin{leftbar}
+            \noindent{\large\textbf{本時の計画}}
+        \end{leftbar}
+    \showSection{本時の到達目標}\ (評価規準)
+    \begin{quote}
+}%
+{
+    \end{quote}
+}
+\newenvironment{ClassPoint}% %%到達目標
+{   
+    \showSection{本時のポイント}
+    \begin{quotation}
+}%
+{
+    \end{quotation}
+}
+
+
+\newenvironment{TeachingProcedures}% %%指導計画表
+{
+    \begin{leftbar}
+    \noindent\textbf{本時の展開}
+    \end{leftbar}
+    \vspace{0.5em}
+    \fontsize{8pt}{12pt}\selectfont
+    % \renewcommand{\arraystretch}{1.2}
+    
+    \begin{longtable}[c]{|p{.04\textwidth}|p{.4\textwidth}|p{.3\textwidth}|p{.2\textwidth}|}
+    \hline
+    \multicolumn{1}{|c}{段階} & \multicolumn{1}{|c}{学習活動} & \multicolumn{1}{|c}{指導上の留意点} & \multicolumn{1}{|c|}{評価の観点} \\
+    \hline
+}{
+    \end{longtable}
+    
+    \normalsize
+}
+\newenvironment{tpacol}%
+{
+    \begin{minipage}[t]{.99\linewidth}
+}%
+{
+    \end{minipage}
+    \vspace{1mm}
+    }
+\newenvironment{tpbcol}%
+{
+    \begin{minipage}[t]{.99\linewidth}
+}%
+{
+    \end{minipage}
+    \vspace{1mm}
+}
+\newenvironment{tpccol}%
+{
+    \begin{minipage}[t]{.99\linewidth}
+}%
+{   
+    \end{minipage}
+    \vspace{1mm}
+}
+\newenvironment{tpdcol}%
+{
+    \begin{minipage}[t]{.98\linewidth}       
+}%
+{
+    \end{minipage}
+    \vspace{1mm}
+}
+\endinput
